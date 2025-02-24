@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreboard {
+    margin-bottom: 10px;
+}
+
+.game-field {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20px); /* Используем повторение для создания сетки */
+    grid-gap: 1px; /* Отступ между ячейками */
+}
+
+.cell {
+    width: 20px; /* Ширина ячейки */
+    height: 20px; /* Высота ячейки */
+    background-color: lightblue; /* Цвет фона ячейки */
+}
+
+.snake {
+    background-color: rgba(21, 87, 65, 0.637); /* Цвет змейки */
+}
+
+.apple {
+    background-color: red; /* Цвет яблока */
+    border-radius: 50%; /* Делаем яблоко круглым */
+}
