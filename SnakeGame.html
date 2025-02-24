@@ -14,6 +14,31 @@
     <div class="game-field"></div>
     <button id="restartButton" style="display: none;">Restart Game</button>
 
-    <script src="SnakeGame.js"></script>
+    <script src="Apple.js"></script>
+    <script src="Snake.js"></script>
+    <script src="Game.js"></script>
+    <script>
+        // Функция для получения размеров поля от пользователя
+        function getGridSize() {
+            let rows = parseInt(prompt("Введите количество строк (по умолчанию 10):", "10")) || 10;
+            let cols = parseInt(prompt("Введите количество столбцов (по умолчанию 10):", "10")) || 10;
+
+            // Проверка на минимальные размеры
+            if (rows < 2 || cols < 2) {
+                alert("Минимальные размеры поля 2 на 2. Установлены размеры 10 на 10.");
+                rows = 10;
+                cols = 10;
+            }
+
+            return { rows, cols };
+        }
+
+        // Инициализация игры с заданными размерами
+        const { rows, cols } = getGridSize();
+        const game = new Game(rows, cols);
+        document.getElementById('restartButton').addEventListener('click', () => {
+            location.reload();
+        });
+    </script>
 </body>
 </html>
